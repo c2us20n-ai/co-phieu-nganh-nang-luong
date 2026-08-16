@@ -2,30 +2,31 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0c14" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Cổ Phiếu NL" />
   <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="description" content="Cổ phiếu ngành năng lượng Việt Nam — dầu khí, điện, thủy điện, NLTT, than" />
   <link rel="icon" type="image/jpeg" href="Co-Phieu-Nganh-Nang-Luong.jpg" />
   <link rel="apple-touch-icon" href="Co-Phieu-Nganh-Nang-Luong.jpg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.json" />
-  <title>Cổ Phiếu Ngành Năng Lượng · 99 Thẻ</title>
+  <title>Cổ Phiếu Ngành Năng Lượng</title>
   <style>
     :root { --gold: #fbbf24; --bg: #05060a; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       min-height: 100vh;
-      font-family: "Segoe UI", system-ui, sans-serif;
+      min-height: 100dvh;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
       color: #e8f0ff;
       background: var(--bg);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px 16px;
       text-align: center;
       position: relative;
       overflow-x: hidden;
@@ -34,106 +35,139 @@
       content: "";
       position: fixed; inset: 0; z-index: -1;
       background: url('Co-Phieu-Nganh-Nang-Luong.jpg') center / cover no-repeat;
-      opacity: 0.35;
+      opacity: 0.38;
     }
     body::after {
       content: "";
       position: fixed; inset: 0; z-index: -1;
-      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(10,8,30,0.4), rgba(5,6,10,0.92));
+      background: radial-gradient(ellipse 80% 55% at 50% 35%, rgba(10,8,30,0.35), rgba(5,6,10,0.92));
     }
     .card {
-      max-width: 520px;
+      max-width: 420px;
       width: 100%;
-      background: rgba(12,10,28,0.88);
-      border: 1.5px solid rgba(251,191,36,0.55);
-      border-radius: 20px;
-      padding: 28px 24px;
-      box-shadow: 0 0 40px rgba(251,191,36,0.25), 0 20px 50px rgba(0,0,0,0.5);
-      backdrop-filter: blur(12px);
+      background: rgba(12,10,28,0.9);
+      border: 1.5px solid rgba(251,191,36,0.5);
+      border-radius: 22px;
+      padding: 32px 22px 28px;
+      box-shadow: 0 0 40px rgba(251,191,36,0.22), 0 20px 50px rgba(0,0,0,0.5);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
     h1 {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       font-weight: 800;
+      line-height: 1.25;
       background: linear-gradient(105deg, #fbbf24, #fde047, #a78bfa, #67e8f9);
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 8px;
-      animation: shine 6s ease infinite;
+      margin-bottom: 10px;
+      animation: shine 7s ease infinite;
     }
     @keyframes shine {
       0%,100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
-    p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin: 10px 0 18px; }
-    .btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    a.btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 22px; font-size: 0.95rem; font-weight: 800;
-      border-radius: 999px; text-decoration: none; color: #0a0c14;
+    .desc {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin-bottom: 22px;
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+    a.btn, button.btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      font-size: 1rem;
+      font-weight: 800;
+      border-radius: 999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      color: #0a0c14;
       background: linear-gradient(135deg, #fbbf24, #f59e0b);
       box-shadow: 0 4px 18px rgba(251,191,36,0.45);
       transition: transform 0.15s, box-shadow 0.15s;
     }
-    a.btn:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(251,191,36,0.6); }
-    a.btn.secondary {
-      background: transparent; color: #fde68a;
-      border: 1px solid rgba(251,191,36,0.5);
+    a.btn:active, button.btn:active { transform: scale(0.98); }
+    a.btn.secondary, button.btn.secondary {
+      background: transparent;
+      color: #fde68a;
+      border: 1.5px solid rgba(251,191,36,0.55);
       box-shadow: none;
     }
-    .note { margin-top: 16px; font-size: 0.72rem; color: #64748b; }
-    #prompt {
-      position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
-      width: min(94vw, 480px);
-      background: linear-gradient(135deg, rgba(20,12,40,0.97), rgba(8,10,22,0.98));
-      border: 1px solid rgba(251,191,36,0.5);
+    .hint {
+      margin-top: 20px;
+      padding: 14px 14px 12px;
+      background: rgba(0,0,0,0.35);
       border-radius: 14px;
-      padding: 12px 14px;
-      font-size: 0.8rem;
-      color: #fde68a;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
-      z-index: 100;
-      display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      text-align: left;
     }
-    #prompt.hidden { display: none; }
-    #prompt button {
-      padding: 5px 12px; font-size: 0.72rem; font-weight: 700;
-      border-radius: 999px; border: none; cursor: pointer;
-      background: #fbbf24; color: #0a0c14;
-    }
-    #prompt .x {
-      background: transparent; color: #94a3b8;
-      border: 1px solid rgba(148,163,184,0.4);
+    .hint strong { color: #fbbf24; }
+    .hint ol { margin: 8px 0 0 18px; }
+    .hint li { margin-bottom: 4px; }
+    .note {
+      margin-top: 16px;
+      font-size: 0.7rem;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
-  <div id="prompt">
-    <span>📥 <strong>Đề xuất:</strong> Tải file về máy để dùng offline</span>
-    <a class="btn" style="padding:6px 14px;font-size:0.75rem" href="cards.html" download="Co-Phieu-Nganh-Nang-Luong.html">Tải HTML đầy đủ</a>
-    <a class="btn secondary" style="padding:6px 12px;font-size:0.72rem" href="Co-Phieu-Nganh-Nang-Luong.jpg" download>Tải hình nền</a>
-    <button type="button" class="x" id="closePrompt">Đóng</button>
-  </div>
-
   <div class="card">
     <h1>Cổ Phiếu Ngành Năng Lượng</h1>
-    <p>99 thẻ interactive cổ phiếu ngành năng lượng Việt Nam — dầu khí, điện, thủy điện, NLTT, than…</p>
+    <p class="desc">Theo dõi cổ phiếu ngành năng lượng Việt Nam — dầu khí, điện, thủy điện, NLTT, than và các mã liên quan.</p>
     <div class="btns">
-      <a class="btn" href="cards.html">🚀 Mở 99 thẻ ngay</a>
-      <a class="btn secondary" href="cards.html" download="Co-Phieu-Nganh-Nang-Luong.html">📥 Tải về máy</a>
+      <a class="btn" href="cards.html">Mở ứng dụng</a>
+      <button type="button" class="btn secondary" id="installHintBtn">Ghim lên màn hình chính</button>
     </div>
-    <p class="note">Hình nền: Co-Phieu-Nganh-Nang-Luong.jpg · GitHub Pages</p>
+    <div class="hint" id="installHint">
+      <strong>Cách ghim như một app:</strong>
+      <ol>
+        <li>Mở trang này bằng <strong>Safari</strong> (iPhone) hoặc Chrome (Android)</li>
+        <li>Bấm nút <strong>Chia sẻ</strong> (iPhone) hoặc menu ⋮ (Android)</li>
+        <li>Chọn <strong>Thêm vào Màn hình chính</strong></li>
+        <li>Xác nhận — icon hoa sẽ hiện như app</li>
+      </ol>
+    </div>
+    <p class="note">Chạy online · Không cần tải file</p>
   </div>
 
   <script>
-    (function(){
-      var p = document.getElementById('prompt');
-      var c = document.getElementById('closePrompt');
-      if (localStorage.getItem('hideEnergyPrompt') === '1') p.classList.add('hidden');
-      c.addEventListener('click', function(){
-        p.classList.add('hidden');
-        try { localStorage.setItem('hideEnergyPrompt','1'); } catch(e){}
+    (function () {
+      var btn = document.getElementById('installHintBtn');
+      var box = document.getElementById('installHint');
+      if (btn && box) {
+        btn.addEventListener('click', function () {
+          box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          box.style.outline = '2px solid #fbbf24';
+          setTimeout(function () { box.style.outline = 'none'; }, 1200);
+        });
+      }
+      // Android Chrome: native install prompt when available
+      var deferred;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        deferred = e;
+        if (btn) {
+          btn.textContent = 'Cài đặt app';
+          btn.onclick = function () {
+            if (deferred) deferred.prompt();
+          };
+        }
       });
     })();
   </script>
